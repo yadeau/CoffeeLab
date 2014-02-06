@@ -71,10 +71,12 @@ describe "Testing operators", ->
     assert.equal(whoISWho("Isaac","Justin"), false)
   it "should return true if a number is in at least one array", ->
     assert.equal(checkArr([0,6,7,1],[5,8,2,4], 4), true)
-#  it "should return true", ->
-#    assert.equal(truth(),true)
+  it "should return true", ->
+    assert.equal(truth(),true)
 
 whoISWho = (person1, person2) -> person1 is person2
 
 checkArr = (arr1, arr2, num) ->  num in arr1 or num in arr2
+
+truth = () -> yes or no
 
