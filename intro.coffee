@@ -45,6 +45,7 @@ describe "Testing stringSplice", ->
 describe "Testing getRange",->
 
   it "Should return a section of an array", ->
+    arr = [1,2,3,4,5,6,7]
     assert.deepEqual(getRange( arr, 4, 7), [5, 6, 7])
 
 slices = (start, stop, arr) -> arr[start..stop]
@@ -58,4 +59,4 @@ spliceMeow = (size, start, stop) ->
 
 stringSplice = (str, start, stop, newStr) -> str[start..stop] = newStr + str[stop.. str.length]
 
-getRange = (arr, start, stop) ->
+getRange = (arr, start, stop) -> return arr[start.. stop]
