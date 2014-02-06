@@ -36,6 +36,9 @@ describe "Testing slices", ->
 describe "Test spliceMeow", ->
   it "Should return an array of numbers with meow spliced into it at a given section", ->
     assert.deepEqual(spliceMeow(6, 4, 6), [1,2,3,4,"Meow","Meow"])
+  it "Should return an array of numers with meow spliced into a given section", ->
+    assert.deepEqual(spliceMeow(7, 0, 4), ["Meow","Meow","Meow","Meow",6,7])
+
 
 describe "Testing stringSplice", ->
   str = "Isaac"
@@ -60,3 +63,15 @@ spliceMeow = (size, start, stop) ->
 stringSplice = (str, start, stop, newStr) -> str[start..stop] = newStr + str[stop.. str.length]
 
 getRange = (arr, start, stop) -> return arr[start.. stop]
+
+##Tests and functions for operators##
+
+describe "Testing operators", ->
+  it "Should retrun true if two strings are the same person", ->
+    assert.equal(whoISWho("Isaac","Justin"), false)
+#  it "should return true if a number is in at least one array", ->
+#    assert.equal(checkArr([0,4,7,1],[5,8,2,5], 4), true)
+#  it "should return true", ->
+#    assert.equal(truth(),true)
+
+whoISWho = (person1, person2) -> person1 is person2
