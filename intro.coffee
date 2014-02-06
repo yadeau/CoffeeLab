@@ -118,4 +118,3 @@ sumNums = (num, others...) ->
   num += number for number in others
   num
 
-  
