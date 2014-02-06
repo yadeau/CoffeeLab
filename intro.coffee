@@ -91,3 +91,31 @@ describe "Testing extistentials", ->
 notExists = (thing) -> not thing?
 
 makeSeven = (steve) -> 7 if not steve?
+
+##Tests and functions for Destrutoring##
+
+describe "switchedArr", ->
+  it "Should return the array with 1 2 and 3 as the only values", ->
+    assert.deepEqual(switchedArr(["a","b","c","d"]),[1,2,3])
+    assert.deepEqual(switchedArr([1,3,5,7,3,77,5]), [1,2,3])
+    assert.deepEqual(switchedArr(["d"]), [1,2,3])
+
+
+switchedArr = (arr) ->
+  changeArr = [1,2,3]
+  arr = changeArr
+  arr
+
+describe "Testing splats", ->
+  it "Should return 10", ->
+    assert.equal(sumNums(1,2,5,2,6,-6),10)
+  it "Should return 4", ->
+    assert.equal(sumNums(2,2),4)
+  it "Should return 0", ->
+    assert.equal(sumNums(0),0)
+
+sumNums = (num, others...) ->
+  num += number for number in others
+  num
+
+  
