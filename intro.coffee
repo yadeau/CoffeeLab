@@ -62,7 +62,7 @@ spliceMeow = (size, start, stop) ->
 
 stringSplice = (str, start, stop, newStr) -> str[start..stop] = newStr + str[stop.. str.length]
 
-getRange = (arr, start, stop) -> return arr[start.. stop]
+getRange = (arr, start, stop) -> arr[start.. stop]
 
 ##Tests and functions for operators##
 
@@ -80,3 +80,14 @@ checkArr = (arr1, arr2, num) ->  num in arr1 or num in arr2
 
 truth = () -> yes or no
 
+banana = null
+describe "Testing extistentials", ->
+  it "Should return true if the variable does not exist", ->
+    assert.equal(notExists("computers"), false)
+    assert.equal(notExists(banana), true)
+  it "Should return 7 if the variable does not exist", ->
+    assert.equal(makeSeven(null),7)
+
+notExists = (thing) -> not thing?
+
+makeSeven = (steve) -> 7 if not steve?
