@@ -1,6 +1,6 @@
 assert = require 'assert'
-console = require 'console'
 
+###
 describe "Testing GPA functions", ->
   it "Should return 4.00", ->
     assert.equal(convertGrade("A"), 4.00)
@@ -12,6 +12,15 @@ describe "Testing GPA functions", ->
 
   it "Should return 10", ->
     assert.equal(sumCredits([1,5,2,2]),10)
+###
+headerStr = '<!DOCTYPE html>\n
+<html>\n
+<head>\n
+    <title>GPA Calculator</title>\n
+    <script src = /routes/form.js></script>\n
+</head>\n
+<body>\n
+<h2><u>GPA CALCULATOR</u></h2><br />'
 
 sumCredits = (creds) ->
   c = 0
@@ -54,3 +63,9 @@ convertGrade = (letGr) ->
   points
 
 computeGPA = (grades, credits) -> (sumGrades grades, credits) / sumCredits credits
+
+exports.formResponse = (req, res) ->
+  res.render 'form'
+
+exports.postResponse = (req, res) ->
+  res.send '<p>WIN!</p>'
